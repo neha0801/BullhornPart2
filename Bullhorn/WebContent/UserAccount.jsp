@@ -55,8 +55,7 @@ table {
 			<br></br>
 
 		</div>
-		<form action="ServletBullhorn" method="post"
-			style="text-align: center">
+		<form	style="text-align: center">
 			<label style="font-size: 20px">Comments:</label><br></br>
 			<textarea rows='4' cols='50' name='post' style="text-align: center"></textarea>
 			<br></br>

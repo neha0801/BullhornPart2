@@ -24,7 +24,7 @@
 	src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.14.0/additional-methods.js"></script>
 <script
 	src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.14.0/additional-methods.min.js"></script>
-<title>Bullhorn Blog</title>
+<title>Register User</title>
 <style>
 h1 {
 	font-family: "Bookman Old Style";
@@ -55,7 +55,7 @@ body {
 		</div>
 			<div class="panel panel-primary col-sm-6 col-sm-offset-3">
 
-					<form role="form" action="LoginForm" method="POST">
+					<form role="form" action="AddUser" method="POST">
 						<div class="form-group">
 							<label for="email">Email:</label> <input type="email"
 								class="form-control" name="email" />
@@ -65,17 +65,18 @@ body {
 							<% } %>	
 							<label for="password">Password:</label> <input type="password"
 								class="form-control" name="password" />
+							<label for="password">Confirm Password:</label> <input type="password"
+								class="form-control" name="confirmPassword" />
+							<% if (request.getParameter("password") != request.getParameter("confirmPassword")) { %>
+								
+								<div class="alert alert-danger"><p>Password does not match!</p></div>
+							<% } %>	
 						</div>
 						
-						<div class="form-group">
-							<button type="submit" value="submit" class="btn btn-primary">Log In</button>
-
-							<a href="GuestAccount"	class="btn btn-primary">Guest Account</a>
-						
-							<a href="AddUser"class="btn btn-primary">New User Registration</a>
-						</div>
-
 					</form>
+					<form action=LoginForm method="get">
+							<button href="LoginForm?logout=yes" type="submit" value="submit" class="btn btn-primary">Register</button>
+</form>
 				</div>
 			</div>
 </body>

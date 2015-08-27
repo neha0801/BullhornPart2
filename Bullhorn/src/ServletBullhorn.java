@@ -34,7 +34,7 @@ public class ServletBullhorn extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+		doPost(request,response);
 	}
 
 	/**
@@ -49,7 +49,9 @@ public class ServletBullhorn extends HttpServlet {
 		System.out.println(post);
 		postObj.setPost(post);
 		postObj.setBloguser(bUser);
-		System.out.println(bUser.getEmail());
+		//System.out.println(bUser.getEmail());
+		System.out.println(postObj.getPost());
+		System.out.println(postObj.getPostId());
 		Database.insert(postObj);
 		List<Bullhorn> blogList = Database.getAllPost();
 		

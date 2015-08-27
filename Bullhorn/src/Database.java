@@ -10,6 +10,7 @@ import customTools.DBUtil;
 import java.sql.*;
 import java.util.*;
 
+import model.Bloguser;
 import model.Bullhorn;
 
 public class Database {
@@ -28,7 +29,20 @@ public class Database {
 			em.close();
 		}
 	}
-
+	public static void insertUser(Bloguser user) {
+		EntityManager em = DBUtil.getEmFactory().createEntityManager();
+		EntityTransaction trans = em.getTransaction();
+		trans.begin();
+		try {
+			em.persist(user);
+			trans.commit();
+		} catch (Exception e) {
+			System.out.println(e);
+			trans.rollback();
+		} finally {
+			em.close();
+		}
+	}
 
 
 	public static List<Bullhorn> getAllPost() {
