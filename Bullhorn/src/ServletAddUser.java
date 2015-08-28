@@ -64,7 +64,7 @@ public class ServletAddUser extends HttpServlet {
 			Database.insertUser(bUser);
 			HttpSession session = request.getSession();
 			session.setAttribute("bloguser", bUser);
-			getServletContext().getRequestDispatcher("/UserAccount.jsp").forward(request, response);
+			getServletContext().getRequestDispatcher("/Login.jsp").forward(request, response);
 			
 	    }
 

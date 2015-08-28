@@ -72,11 +72,10 @@ body {
 								<div class="alert alert-danger"><p>Password does not match!</p></div>
 							<% } %>	
 						</div>
-						
+						<button  type="submit" value="submit" class="btn btn-primary">Register</button>
 					</form>
-					<form action=LoginForm method="get">
-							<button href="LoginForm?logout=yes" type="submit" value="submit" class="btn btn-primary">Register</button>
-</form>
+							
+
 				</div>
 			</div>
 </body>
